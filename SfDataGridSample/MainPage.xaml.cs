@@ -29,22 +29,23 @@ namespace SfDataGridSample
             this.dataGrid.View.Filter = FilterRecords;
             this.dataGrid.View.RefreshFilter();
         }
+    }
 
-        public interface InterfaceB
-        {
-            int TestProperty { get; set; }
-        }
+    public interface InterfaceB
+    {
+        int TestProperty { get; set; }
+    }
 
-        public interface InterfaceA : InterfaceB
-        {
-            string Name { get; set; }
-        }
-        public class SampleData : InterfaceA
-        {
-            public int TestProperty { get; set; }
-            public string Name { get; set; }
-        }
+    public interface InterfaceA : InterfaceB
+    {
+        string Name { get; set; }
+    }
+    public class SampleData : InterfaceA
+    {
+        public int TestProperty { get; set; }
+        public string Name { get; set; }
     }
 }
+
 
 
