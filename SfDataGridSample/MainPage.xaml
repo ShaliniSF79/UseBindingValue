@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:local="clr-namespace:SfDataGridSample"
+             x:Class="SfDataGridSample.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+
+    <StackLayout>
+        <Button Text="Filter" Clicked="Button_Clicked" WidthRequest="200" HeightRequest="50"/>
+
+        <syncfusion:SfDataGrid x:Name="dataGrid"
+                        ItemsSource="{Binding Items}"
+                        GridLinesVisibility="Both"
+                        AllowEditing="True"
+                        AutoGenerateColumnsMode="None"
+                        SelectionMode="Single"
+                        
+                        VerticalOptions="FillAndExpand"
+                        
+                        >
+
+            <syncfusion:SfDataGrid.GroupColumnDescriptions>
+                <syncfusion:GroupColumnDescription ColumnName="Name"/>
+
+            </syncfusion:SfDataGrid.GroupColumnDescriptions>
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn HeaderText="Name" UseBindingValue="True" AllowSorting="True"
+              MappingName="Name" />
+                <syncfusion:DataGridTextColumn HeaderText="Test Property"  UseBindingValue="True" AllowSorting="True"
+              MappingName="TestProperty" />
+            </syncfusion:SfDataGrid.Columns>
+
+        </syncfusion:SfDataGrid>
+    </StackLayout>
+</ContentPage>
+    
+
+
